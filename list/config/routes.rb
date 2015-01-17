@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'strokes/index'
+
+  get 'strokes/show'
+
+  get 'strokes/new'
+
+  post 'strokes' => 'strokes#create'
+
   get 'users/index'
 
   get 'users/show'
