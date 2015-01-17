@@ -4,7 +4,9 @@ List is a listing service for all kind of items including movie, music, book, re
 Simple, simple, simple.
 Fast, fast, fast.
 Sequential list over Structured list.
-
+Few critical page.
+High value / tap (One tap does good work)
+No Login
 
 -----------
 
@@ -28,3 +30,18 @@ Rails Command:
 - rails new list -> create new rails app named list
 - rails g controller users index show -> create /app/views/users/show.html.erb, /app/views/users/index.html.erb and /app/controllers/users_controller.rb
 - rails s -> run server
+
+
+-----
+BluePrint:
+tag has text and image
+
+user is tag
+"book" is tag
+
+box input tag -> list
+ex. box input meaue -> meaue's list
+(here shows users personal page)
+ex. box input book -> book list
+
+make new item form below list
