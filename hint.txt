@@ -1,0 +1,30 @@
+Compass:
+List is a listing service for all kind of items including movie, music, book, restaurant to help people's capinity. Capinity is a measurement of recognizable information at a time.
+
+Simple, simple, simple.
+Fast, fast, fast.
+Sequential list over Structured list.
+
+
+-----------
+
+
+Basic flow and Command:
+1. /app/views/users/show.html.erb asks variables (e.g. @user) to 
+2. /app/controllers/users_controller.rb. Controller asks data (e.g. @user = User.find_by(:username => params[:username])) to /db/* or /config/routes.rb
+3. /config/routes.rb routes requested URL, then return value to the controller
+3. /db/* returns value
+
+Database:
+migration = create table
+seed = structured data (e.g. for test dataset)
+
+Rails Command:
+
+- rails g model user name:strig username:string location:string about:text -> (create model) generetes migration file
+- rake db:migrate -> create table based on migration file (e.g. /db/migrate/20150117094006_create_users.rb)
+- rake db:seed -> insert /db/seeds.rb data to database
+- rake db:create
+- rails new list -> create new rails app named list
+- rails g controller users index show -> create /app/views/users/show.html.erb, /app/views/users/index.html.erb and /app/controllers/users_controller.rb
+- rails s -> run server
