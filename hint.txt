@@ -21,13 +21,13 @@ migration = create table
 seed = structured data (e.g. for test dataset)
 
 Rails Command:
-
-- rails g model user name:strig username:string location:string about:text -> (create model) generetes migration file
-- rake db:migrate -> create table based on migration file (e.g. /db/migrate/20150117094006_create_users.rb)
-- rake db:seed -> insert /db/seeds.rb data to database
-- rake db:create
 - rails new list -> create new rails app named list
 - rails g controller users index show -> create /app/views/users/show.html.erb, /app/views/users/index.html.erb and /app/controllers/users_controller.rb
+- rails g model user name:strig username:string location:string about:text -> (create model) generetes migration file
+
+- rake db:create
+- rake db:migrate -> create table based on migration file (e.g. /db/migrate/20150117094006_create_users.rb)
+- rake db:seed -> insert /db/seeds.rb data to database
 - rails s -> run server
 
 
