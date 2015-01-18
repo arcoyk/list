@@ -1,5 +1,16 @@
-<h1>Welcome to List Pool</h1>
+<h1>LIST</h1>
+
+<%= form_for Stroke.new do |f| %>
+	<%= f.label :tags %>
+	<%= f.text_field :tags %>
+	<%= f.label :content %>
+	<%= f.text_area :content %>
+	<%= f.submit %>
+<% end %>
+
 <% @strokes.each do |stroke| %>
-	<h1><%= stroke.tags %></h1>
-	<p><%= stroke.content %></p>
+	<p>
+		<b> <%= stroke.content %> </b> <br>
+		<%= stroke.tags %>
+	</p>
 <% end %>
