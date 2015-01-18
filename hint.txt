@@ -10,7 +10,6 @@ No Login
 
 -----------
 
-
 Basic flow and Command:
 1. /app/views/users/show.html.erb asks variables (e.g. @user) to 
 2. /app/controllers/users_controller.rb. Controller asks data (e.g. @user = User.find_by(:username => params[:username])) to /db/* or /config/routes.rb
@@ -45,3 +44,9 @@ ex. box input meaue -> meaue's list
 ex. box input book -> book list
 
 make new item form below list
+
+Imagerylisting:
+Create list from image with arrayed pattern. Taking photo of restaurant menu, markets fruits, buidlings, Excel to list them with several possible pattern suggested. OCR is better.
+
+
+
