@@ -19,7 +19,9 @@ class StrokesController < ApplicationController
 
   def search
     # @strokes = Stroke.where(['name LIKE ?', "meaue"])
-    @strokes = Stroke.where("content = ?", params[:query])
+    tmp = Stroke.all
+    simple_query = params[:query].first
+    @strokes = tmp.select { |stroke| stroke.tags.index(simple_query)}
     params.delete :query
   end
 
