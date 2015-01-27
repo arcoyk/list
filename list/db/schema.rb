@@ -11,11 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150117101856) do
+ActiveRecord::Schema.define(version: 20150127120459) do
 
   create_table "strokes", force: :cascade do |t|
-    t.string   "tags"
     t.text     "content"
+    t.text     "tags"
+    t.text     "icon"
+    t.integer  "mode"
+    t.integer  "like"
+    t.text     "keyhole"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

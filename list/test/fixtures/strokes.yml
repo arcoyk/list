@@ -1,9 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  tags: MyString
   content: MyText
+  tags: MyText
+  icon: MyText
+  mode: 1
+  like: 1
+  keyhole: MyText
 
 two:
-  tags: MyString
   content: MyText
+  tags: MyText
+  icon: MyText
+  mode: 1
+  like: 1
+  keyhole: MyText

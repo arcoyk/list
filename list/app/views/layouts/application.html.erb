@@ -24,6 +24,7 @@
 
 	<% @strokes.each do |stroke| %>
 		<p>
+			<%= image_tag stroke.icon, :size => "50x50" %>
 			<b> <%= stroke.content %> </b> <br>
 			<%= stroke.tags %>
 		</p>
