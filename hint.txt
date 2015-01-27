@@ -2,6 +2,7 @@ Compass:
 List is a listing service for all kind of items including movie, music, book, restaurant to help people's capinity. Capinity is a measurement of recognizable information at a time.
 
 Simple, simple, simple.
+Unique, unique, unique.
 Fast, fast, fast.
 Sequential list over Structured list.
 Few critical page.
@@ -47,6 +48,23 @@ make new item form below list
 
 Imagerylisting:
 Create list from image with arrayed pattern. Taking photo of restaurant menu, markets fruits, buidlings, Excel to list them with several possible pattern suggested. OCR is better.
+
+List Style:
+Sytles are provided to arrange and show list (e.g. Ranking, Collection, TODOLIST)
+
+-----
+TODO:
+Auto icon, tags from content
+Content from url
+Click stroke to url
+Good style
+Good search
+Secret tag
+List from image
+Stock game
+Stroke sort
+Heroku up
+
 
 
 
