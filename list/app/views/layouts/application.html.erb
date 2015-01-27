@@ -25,8 +25,11 @@
 	<% @strokes.each do |stroke| %>
 		<p>
 			<%= image_tag stroke.icon, :size => "50x50" %>
-			<b> <%= stroke.content %> </b> <br>
+			<b><%= link_to stroke.content, stroke.url %></b>
 			<%= stroke.tags %>
+			<%= button_to "TOGGLE", :action => "toggle" %>
+			<%= button_to "LIKE", :action => "like" %>
+			<%= stroke.like %> likes
 		</p>
 	<% end %>
 

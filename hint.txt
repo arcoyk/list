@@ -1,13 +1,16 @@
 Compass:
 List is a listing service for all kind of items including movie, music, book, restaurant to help people's capinity. Capinity is a measurement of recognizable information at a time.
 
-Simple, simple, simple.
-Unique, unique, unique.
-Fast, fast, fast.
-Sequential list over Structured list.
-Few critical page.
-High value / tap (One tap does good work)
-No Login
+Simple over Rich
+ -Few critical pages
+ -Any actions by scroll
+ -Stay minimal though you think you need more
+ -High value / tap (One tap does good work)
+ -Sequential over Structured
+Unique over Fiendly
+ -No Login
+Cute over Cool
+ -Color pattern from Grant Wood's
 
 -----------
 
@@ -55,6 +58,7 @@ Sytles are provided to arrange and show list (e.g. Ranking, Collection, TODOLIST
 -----
 TODO:
 Auto icon, tags from content
+Generate tag
 Content from url
 Click stroke to url
 Good style
@@ -64,7 +68,10 @@ List from image
 Stock game
 Stroke sort
 Heroku up
+List style
 
 
-
-
+-----
+ISSUE:
+1. How do we name things?
+Tag is a common way to group items. However, a word often groups multiple words (e.g. Banana is a tag to a group of yellow, long, sweet fruit). In addition, Banana is supposed to be a stroke. So, tag and stroke is a kind of word which name things and make the real world recognizable. Names are given when they worthfuly devide multiple things (e.g. "Woman" and "Man" devide 6 billion people into two groups). 

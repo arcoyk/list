@@ -4,9 +4,9 @@ class CreateStrokes < ActiveRecord::Migration
       t.text :content
       t.text :tags
       t.text :icon
-      t.integer :mode
       t.integer :like
       t.text :keyhole
+      t.text :url
 
       t.timestamps null: false
     end

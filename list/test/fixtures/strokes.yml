@@ -4,14 +4,14 @@ one:
   content: MyText
   tags: MyText
   icon: MyText
-  mode: 1
   like: 1
   keyhole: MyText
+  url: MyText
 
 two:
   content: MyText
   tags: MyText
   icon: MyText
-  mode: 1
   like: 1
   keyhole: MyText
+  url: MyText

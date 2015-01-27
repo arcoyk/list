@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   get 'strokes' => 'strokes#search'
 
+  post 'strokes/toggle'
+
+  post 'strokes/like'
+
   get 'users/index'
 
   get 'users/show'

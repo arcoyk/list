@@ -24,22 +24,22 @@
 @stroke.tags = "book, @meaue, romance"
 @stroke.content = "Dreamers (1988) Albert Adair is a romance novel"
 @stroke.icon = "img/default.png"
-@stroke.mode = 1
-@stroke.like = 0
+@stroke.url = "http://google.com"
+@stroke.like = 344
 @stroke.save
 
 @stroke = Stroke.new
 @stroke.tags = "movie, @meaue, SF"
 @stroke.content = "One Point O (1999) is a SF film"
 @stroke.icon = "img/default.png"
-@stroke.mode = 1
-@stroke.like = 0
+@stroke.url = "http://google.com"
+@stroke.like = 435
 @stroke.save
 
 @stroke = Stroke.new
 @stroke.tags = "book"
 @stroke.content = "Moby Dick is a book"
 @stroke.icon = "img/default.png"
-@stroke.mode = 1
-@stroke.like = 0
+@stroke.url = "http://google.com"
+@stroke.like = 435
 @stroke.save
