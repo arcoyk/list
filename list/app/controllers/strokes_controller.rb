@@ -16,4 +16,11 @@ class StrokesController < ApplicationController
   	@stroke.save
   	redirect_to '/strokes/index'
   end
+
+  def search
+    # @strokes = Stroke.where(['name LIKE ?', "meaue"])
+    @strokes = Stroke.where("content = ?", params[:query])
+    params.delete :query
+  end
+
 end

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   post 'strokes' => 'strokes#create'
 
+  get 'strokes' => 'strokes#search'
+
   get 'users/index'
 
   get 'users/show'
