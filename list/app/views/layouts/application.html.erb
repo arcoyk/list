@@ -10,7 +10,7 @@
 	<%= link_to "LIST", "/strokes/index" %>
 
 	<%= form_tag Stroke, :method => 'get' do %>
-		<%= text_field "search", params[:query] %>
+		<%= text_field :query, params[:query] %>
 		<%= submit_tag "Search", :name => nil %>
 	<% end %>
 
