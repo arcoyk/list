@@ -11,7 +11,7 @@
 
 	<%= form_tag Stroke, :method => 'get' do %>
 		<%= text_field :query, params[:query] %>
-		<%= submit_tag "Search", :name => nil %>
+		<%= submit_tag "Search", :name => nil, :class => "btn btn-default" %>
 	<% end %>
 
 	<%= form_for Stroke.new do |f| %>
@@ -19,7 +19,7 @@
 		<%= f.text_field :tags %>
 		<%= f.label :content %>
 		<%= f.text_area :content %>
-		<%= f.submit %>
+		<%= f.submit :class => "btn btn-default"%>
 	<% end %>
 
 	<% @strokes.each do |stroke| %>
@@ -27,8 +27,8 @@
 			<%= image_tag stroke.icon, :size => "50x50" %>
 			<b><%= link_to stroke.content, stroke.url %></b>
 			<%= stroke.tags %>
-			<%= button_to "PUSH", :action => "push", :id => stroke.id %>
-			<%= button_to "PULL", :action => "pull", :id => stroke.id %>
+			<%= button_to "PUSH", {:action => "push", :id => stroke.id}, :class => "btn btn-default" %>
+			<%= button_to "PULL", {:action => "pull", :id => stroke.id}, :class => "btn btn-default" %>
 			<%= stroke.like %> CHERRY
 		</p>
 	<% end %>
