@@ -27,25 +27,12 @@ class StrokesController < ApplicationController
     params.delete :query
   end
 
-  def toggle
-    @stroke = Stroke.find(params[:id])
-    if @stroke.mode == 1
-      @stroke.mode = 0
-    elsif mode == 0
-      @stroke.mode = 1
-    end
-    redirect_to '/strokes/index'
-  end
-
   def like
     @stroke = Stroke.find(params[:id])
     @stroke.like += 1
+    @stroke.save
     puts @stroke
-    if request.xhr?
-      head :ok
-    else
-      redirect_to @stroke
-    end
+    redirect_to '/strokes/index'
   end
 
 

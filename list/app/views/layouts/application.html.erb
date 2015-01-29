@@ -27,10 +27,8 @@
 			<%= image_tag stroke.icon, :size => "50x50" %>
 			<b><%= link_to stroke.content, stroke.url %></b>
 			<%= stroke.tags %>
-			<%= button_to "TOGGLE", :action => "toggle" %>
-			<%= button_to "LIKE", :action => "like" %>
+			<%= button_to "LIKE", :action => "like", :id => stroke.id %>
 			<%= stroke.like %> likes
-			<%= link_to "like", '...', class: 'vote', method: :put, remote: true %>
 		</p>
 	<% end %>
 
