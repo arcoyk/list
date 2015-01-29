@@ -10,7 +10,7 @@
 	<%= link_to "LIST", "/strokes/index" %>
 
 	<%= form_tag Stroke, :method => 'get' do %>
-		<%= text_field :query, params[:query] %>
+		<%= text_field "search", params[:query] %>
 		<%= submit_tag "Search", :name => nil %>
 	<% end %>
 
@@ -30,6 +30,7 @@
 			<%= button_to "TOGGLE", :action => "toggle" %>
 			<%= button_to "LIKE", :action => "like" %>
 			<%= stroke.like %> likes
+			<%= link_to "like", '...', class: 'vote', method: :put, remote: true %>
 		</p>
 	<% end %>
 

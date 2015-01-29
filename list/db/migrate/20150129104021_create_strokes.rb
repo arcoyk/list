@@ -5,7 +5,7 @@ class CreateStrokes < ActiveRecord::Migration
       t.text :tags
       t.text :icon
       t.integer :like
-      t.text :keyhole
+      t.text :heyhole
       t.text :url
 
       t.timestamps null: false

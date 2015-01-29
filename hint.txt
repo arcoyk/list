@@ -34,6 +34,10 @@ Rails Command:
 - rake db:seed -> insert /db/seeds.rb data to database
 - rails s -> run server
 
+- rails detroy model (model name)
+- rails g model (model name)
+- rails db:migrate
+- rails db:seed
 
 -----
 BluePrint:
@@ -69,7 +73,7 @@ Stock game
 Stroke sort
 Heroku up
 List style
-
+Conect sensors
 
 -----
 ISSUE:

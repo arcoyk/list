@@ -14,7 +14,7 @@ class StrokesController < ApplicationController
   	@stroke.tags = params[:stroke][:tags]
   	@stroke.content = params[:stroke][:content]
     @stroke.like = 0
-    @stroke.icon = "img/default.png"
+    @stroke.icon = "default.png"
   	@stroke.save
   	redirect_to '/strokes/index'
   end
@@ -40,7 +40,12 @@ class StrokesController < ApplicationController
   def like
     @stroke = Stroke.find(params[:id])
     @stroke.like += 1
-    @user.like -= 1
+    puts @stroke
+    if request.xhr?
+      head :ok
+    else
+      redirect_to @stroke
+    end
   end
 
 
