@@ -1,6 +1,7 @@
 class StrokesController < ApplicationController
   def index
   	@strokes = Stroke.all
+    @strokes = @strokes.sort {|a, b| b.like <=> a.like}
   end
 
   def show
@@ -24,12 +25,21 @@ class StrokesController < ApplicationController
     tmp = Stroke.all
     simple_query = params[:query].first
     @strokes = tmp.select { |stroke| stroke.tags.index(simple_query)}
+    @strokes = @strokes.sort {|a, b| b.like <=> a.like}
     params.delete :query
   end
 
-  def like
+  def push
     @stroke = Stroke.find(params[:id])
     @stroke.like += 1
+    @stroke.save
+    puts @stroke
+    redirect_to '/strokes/index'
+  end
+
+  def pull
+    @stroke = Stroke.find(params[:id])
+    @stroke.like = 0
     @stroke.save
     puts @stroke
     redirect_to '/strokes/index'

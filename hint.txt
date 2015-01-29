@@ -7,10 +7,13 @@ Simple over Rich
  -Stay minimal though you think you need more
  -High value / tap (One tap does good work)
  -Sequential over Structured
-Unique over Fiendly
- -No Login
+ -No color, just lines that reverage highreso display
+Unique over Friendly
+ -Experiece without login
 Cute over Cool
  -Color pattern from Grant Wood's
+ -Use tangible symbols: not "like" but "cherry"
+ -Tangle UI to intuitive grasp long list (Metaphor in function, User's eye fliction on edge of UI)
 
 -----------
 
@@ -54,7 +57,7 @@ ex. box input book -> book list
 make new item form below list
 
 Imagerylisting:
-Create list from image with arrayed pattern. Taking photo of restaurant menu, markets fruits, buidlings, Excel to list them with several possible pattern suggested. OCR is better.
+Create list from image with arrayed pattern. Taking photo of restaurant menu, markets fruits, buidlings, Excel to list them with several possible pattern suggested. OCR is better. If not connecting to the real world, this service is meaningless.
 
 List Style:
 Sytles are provided to arrange and show list (e.g. Ranking, Collection, TODOLIST)

@@ -27,8 +27,9 @@
 			<%= image_tag stroke.icon, :size => "50x50" %>
 			<b><%= link_to stroke.content, stroke.url %></b>
 			<%= stroke.tags %>
-			<%= button_to "LIKE", :action => "like", :id => stroke.id %>
-			<%= stroke.like %> likes
+			<%= button_to "PUSH", :action => "push", :id => stroke.id %>
+			<%= button_to "PULL", :action => "pull", :id => stroke.id %>
+			<%= stroke.like %> CHERRY
 		</p>
 	<% end %>
 
