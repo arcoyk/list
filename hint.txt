@@ -1,4 +1,4 @@
-Compass:
+COMPASS:
 List is a listing service for all kind of items including movie, music, book, restaurant to help people's capinity. Capinity is a measurement of recognizable information at a time.
 
 Simple over Rich
@@ -17,8 +17,7 @@ Cute over Cool
  -Tactile colors with Ultra Light Glass UI
 
 -----------
-
-Basic flow and Command:
+TECHNICAL HINTS:
 1. /app/views/users/show.html.erb asks variables (e.g. @user) to 
 2. /app/controllers/users_controller.rb. Controller asks data (e.g. @user = User.find_by(:username => params[:username])) to /db/* or /config/routes.rb
 3. /config/routes.rb routes requested URL, then return value to the controller
@@ -75,21 +74,34 @@ Stock game
 Heroku up
 List style
  Conect sensors
+ Suggest
 
 -----
 ISSUE:
 1. How do we name things?
-Tag is a common way to group items. However, a word often groups multiple words (e.g. Banana is a tag to a group of yellow, long, sweet fruit). In addition, Banana is supposed to be a stroke. So, tag and stroke is a kind of word which name things and make the real world recognizable. Names are given when they worthfuly devide multiple things (e.g. "Woman" and "Man" devide 6 billion people into two groups). 
+Tag is a common way to group items. However, a word often groups multiple words (e.g. Banana is a tag to a group of yellow, long, sweet fruit). In addition, Banana is supposed to be a stroke. So, tag and stroke is a kind of word which name things and make the real world recognizable. Names are given when they worthfuly devide multiple things (e.g. "Woman" and "Man" devide 6 billion people into two groups).
 
+2. What is Capinity? How does it improve?
+Capinity is a measurement of information value with a first gaze of something. One way of improving capinity of "text" is to insert related images. However, this conflict of listing compass which is "Simple over Rich". User need to know the context and can expect what comes next. Tag search is effective to show the context, on the other hand, a list with various kind of stroke is confusing. The feeling of "listing" is that the context of the list is very very narrow; "News" is too wide context, "Carl's favorite books" is a bit wide context, "x position of this coffee cup" is narrow context. However, "My favorite books" are narrow context because I have information about the list in advance.
+
+4. Image recoginization design
+Tagging elements in a image so that the informaiton entoropy effectively decreases by introducing that tagging.
 
 -----
 POSSIBLE FUNCTIONS:
 *Be careful not to spoil compass
 1. Sidebar Digest: As ref/sidebar.png, content details can be shown besides of the list
+2. Dynamic list: A list stroke changes in 1 min so that users just turn on the pc and see it like TV.
 
 -----
-GAME RULE:
-1. 
+I want to list:
+1. Movies I saw
+2. My friends favorite movies
+3. Food I ate
+4. Site I went
+5. 2ch good matome
+6. Music (playlist of grooveshark) which I can play without visiting groove shark and see complex website.
+7. FAQ from other user
 
 
 
