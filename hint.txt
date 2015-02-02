@@ -10,6 +10,7 @@ Simple over Rich
  -No color, just lines that reverage highreso display
 Unique over Friendly
  -Experiece without login
+ -Unusual color pattern
 Cute over Cool
  -Color pattern from Grant Wood's
  -Use tangible symbols: not "like" but "cherry"
@@ -64,17 +65,25 @@ Sytles are provided to arrange and show list (e.g. Ranking, Collection, TODOLIST
 
 -----
 TODO:
-Auto icon, tags from content
 Generate tag
- Content from url
-Click stroke to url
 Secret tag
  List from image
+ Log in
 Stock game
 Heroku up
 List style
+ajax
+japanese analysis
+image fit
+good font
+
+DONE:
+Auto icon, tags from content
  Conect sensors
- Suggest
+ Text input auto fill
+ Content from url
+Click stroke to url
+
 
 -----
 ISSUE:

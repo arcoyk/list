@@ -6,6 +6,9 @@ class StrokesController < ApplicationController
   def index
   	@strokes = Stroke.all
     @strokes = @strokes.sort {|a, b| b.like <=> a.like}
+    @strokes.each do |stroke|
+      stroke.tags = self.short_tags stroke.tags
+    end
   end
 
   def show
@@ -72,19 +75,6 @@ class StrokesController < ApplicationController
     img_nodeset.each do |node|
       imgs.push node
     end
-    imgs.sort! do |img1, img2|
-      width1 = img1.attribute("width")
-      width2 = img2.attribute("width")
-      value1 = 0
-      value2 = 0
-      if width1 != nil
-        value1 = width1.value.to_i
-      end
-      if width2 != nil
-        value2 = width2.value.to_i
-      end
-      value1 <=> value2
-    end
     text = ""
     p_nodeset.each do |node|
       node.children.each do |child|
@@ -101,5 +91,14 @@ class StrokesController < ApplicationController
     stroke.url = url
     return stroke
   end
+
+  def short_tags tags
+    if tags.length > 10
+      return tags.split("")[0, 10].join("") + "..."
+    else
+      return tags
+    end
+  end
+
 
 end

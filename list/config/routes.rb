@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   get 'strokes/index'
 
   get 'strokes/show'
@@ -12,12 +14,6 @@ Rails.application.routes.draw do
   post 'strokes/push'
 
   post 'strokes/pull'
-
-  get 'users/index'
-
-  get 'users/show'
-
-  get 'users/show/:username' => 'users#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
