@@ -6,34 +6,41 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
+
 <body>
-	<%= link_to "LIST", "/strokes/index" %>
+		<div class = "jumbotron">
+			<h1><%= link_to "LIST", "/strokes/index", :class => "lead" %></h1>
 
-	<%= form_tag Stroke, :method => 'get' do %>
-		<%= text_field :query, params[:query] %>
-		<%= submit_tag "Search", :name => nil %>
-	<% end %>
+			<%= form_tag Stroke, :method => 'get' do %>
+				<%= text_field :query, params[:query], :class => "form-control", :placeholder => "ex. book, movie, @twitter_account" %>
+				<%= submit_tag "Search", :name => nil, :class => "btn btn-default" %>
+			<% end %>
+		</div>
 
-	<%= form_for Stroke.new do |f| %>
-		<%= f.label :tags %>
-		<%= f.text_field :tags %>
-		<%= f.label :content %>
-		<%= f.text_area :content %>
-		<%= f.submit %>
-	<% end %>
-
-	<% @strokes.each do |stroke| %>
-		<p>
-			<%= image_tag stroke.icon, :size => "50x50" %>
-			<b><%= link_to stroke.content, stroke.url %></b>
-			<%= stroke.tags %>
-			<%= button_to "PUSH", :action => "push", :id => stroke.id %>
-			<%= button_to "PULL", :action => "pull", :id => stroke.id %>
-			<%= stroke.like %> CHERRY
-		</p>
-	<% end %>
-
-	<%= yield %>
-
+	<div class = "container">
+		<table class = "table">
+			<tbody>
+				<%= form_for Stroke.new do |f| %>
+					<td><%= image_tag "default.png", :size => "70x50" %></td>
+					<td><%= f.text_field :content, :class => "form-control", :placeholder => "content" %>
+					<td><%= f.text_field :tags, :class => "form-control", :placeholder => "tag" %>
+					<td><%= f.submit :class => "btn btn-default"%>
+				<% end %>
+				<% @strokes.each do |stroke| %>
+					<%= content_tag_for(:tr, stroke) do %>
+						<td><%= image_tag stroke.icon, :size => "70x50" %></td>
+						<td><%= link_to stroke.content, stroke.url, :target => "_blank" %></td>
+						<td><%= stroke.tags %></td>
+						<td><%= stroke.like %> CHERRY</td>
+						<td><%= button_to "PUSH", {:action => "push", :id => stroke.id}, :class => "btn btn-default" %></td>
+						<td><%= button_to "PULL", {:action => "pull", :id => stroke.id}, :class => "btn btn-default" %></td>
+					<% end %>
+				<% end %>
+			</tbody>
+		</table>
+		
+		<%= yield %>
+	</div>
 </body>
 </html>
