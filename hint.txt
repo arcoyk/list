@@ -70,12 +70,12 @@ Secret tag
  List from image
  Log in
 Stock game
-Heroku up
 List style
 ajax
 japanese analysis
 image fit
 good font
+Heroku up
 
 DONE:
 Auto icon, tags from content
@@ -111,6 +111,11 @@ I want to list:
 5. 2ch good matome
 6. Music (playlist of grooveshark) which I can play without visiting groove shark and see complex website.
 7. FAQ from other user
+
+
+-----
+REFERENCE:
+2次元パターンのランダムさを把握する脳内の視覚処理の仕組み - 九大など　http://news.mynavi.jp/news/2013/10/15/158/
 
 
 
