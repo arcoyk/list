@@ -1,6 +1,9 @@
 COMPASS:
 List is a listing service for all kind of items including movie, music, book, restaurant to help people's capinity. Capinity is a measurement of recognizable information at a time.
 
+Main Function
+ -Devide several things into two groups so that people can grasp complex information.
+
 Simple over Rich
  -Few critical pages
  -Any actions by scroll
@@ -8,9 +11,11 @@ Simple over Rich
  -High value / tap (One tap does good work)
  -Sequential over Structured
  -No color, just lines that reverage highreso display
+
 Unique over Friendly
  -Experiece without login
  -Unusual color pattern
+
 Cute over Cool
  -Color pattern from Grant Wood's
  -Use tangible symbols: not "like" but "cherry"
@@ -65,6 +70,7 @@ Sytles are provided to arrange and show list (e.g. Ranking, Collection, TODOLIST
 
 -----
 TODO:
+ Stroke suggest
 Generate tag
 Secret tag
  List from image
@@ -76,13 +82,12 @@ japanese analysis
 image fit
 good font
 Heroku up
+Connect sensors
+Click stroke to url
 
 DONE:
 Auto icon, tags from content
- Conect sensors
- Text input auto fill
  Content from url
-Click stroke to url
 
 
 -----
@@ -96,11 +101,20 @@ Capinity is a measurement of information value with a first gaze of something. O
 4. Image recoginization design
 Tagging elements in a image so that the informaiton entoropy effectively decreases by introducing that tagging.
 
+5. How a list could be a ranking?
+Good ranking is nice serialization hence better capinity. Number cap sharpens a list more focusable by directing user's eye to top, then next, then next (Well, human can focus only one thing at a time, and finding proper object to focuse is difficult sometimes.). But here, because of the conflict of "simplicity", there should be several possiblitiy to implement the ranking view.
+1) Simply user's push and pull are divided from other's and count it.
+2) Push and pull is actually a tag (e.g. @meaue_push)
+3) @meaue is a tag, and one stroke accept several same tags (e.g. @meaue, book, @meaue, @meaue, @meaue) like sign.
+
+
 -----
 POSSIBLE FUNCTIONS:
 *Be careful not to spoil compass
 1. Sidebar Digest: As ref/sidebar.png, content details can be shown besides of the list
 2. Dynamic list: A list stroke changes in 1 min so that users just turn on the pc and see it like TV.
+3. Imagery Background
+Full range image behind contents (e.g. A movie list. Title and reviews are shown on the background of Amelie's face.)
 
 -----
 I want to list:
@@ -118,8 +132,6 @@ REFERENCE:
 2次元パターンのランダムさを把握する脳内の視覚処理の仕組み - 九大など　http://news.mynavi.jp/news/2013/10/15/158/
 
 RailsにTwitter Bootstrapの導入と簡易な使い方 http://ruby-rails.hatenadiary.com/entry/20140801/1406818800
-
-
 
 
 

@@ -25,7 +25,7 @@ class StrokesController < ApplicationController
     @stroke.icon = "default.png"
     @stroke.like = 0
     if @stroke.content.match http_schema
-      @stroke.like = 100
+      @stroke.tags = @stroke.tags + @stroke.content
       @stroke = self.auto_digest @stroke.content
     end
   	@stroke.save
@@ -43,17 +43,14 @@ class StrokesController < ApplicationController
 
   def push
     @stroke = Stroke.find(params[:id])
-    @stroke.like += 1
+    @stroke.tags = @stroke.tags + ", @Meaue"
     @stroke.save
-    puts @stroke
     redirect_to '/strokes/index'
   end
 
   def pull
     @stroke = Stroke.find(params[:id])
-    @stroke.like = 0
     @stroke.save
-    puts @stroke
     redirect_to '/strokes/index'
   end
 

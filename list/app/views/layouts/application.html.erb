@@ -35,7 +35,6 @@
 						<td><%= image_tag stroke.icon, :size => "70x50" %></td>
 						<td><%= link_to stroke.content, stroke.url, :target => "_blank" %></td>
 						<td><%= stroke.tags %></td>
-						<td><%= stroke.like %> CHERRY</td>
 						<td><%= button_to "PUSH", {:action => "push", :id => stroke.id}, :class => "btn btn-default" %></td>
 						<td><%= button_to "PULL", {:action => "pull", :id => stroke.id}, :class => "btn btn-default" %></td>
 					<% end %>
