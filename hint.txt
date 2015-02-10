@@ -133,6 +133,7 @@ REFERENCE:
 
 RailsにTwitter Bootstrapの導入と簡易な使い方 http://ruby-rails.hatenadiary.com/entry/20140801/1406818800
 
+devise gemを使ってtwitter認証の設定 http://qiita.com/soramugi/items/5b2ed46e8c8b6157e7cc
 
 
 
