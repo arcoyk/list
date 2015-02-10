@@ -23,7 +23,7 @@ Cute over Cool
  -Tactile colors with Ultra Light Glass UI
 
 -----------
-TECHNICAL HINTS:
+TECHNICAL HINTS (RAILS):
 1. /app/views/users/show.html.erb asks variables (e.g. @user) to 
 2. /app/controllers/users_controller.rb. Controller asks data (e.g. @user = User.find_by(:username => params[:username])) to /db/* or /config/routes.rb
 3. /config/routes.rb routes requested URL, then return value to the controller
@@ -47,6 +47,20 @@ Rails Command:
 - rails g model (model name)
 - rails db:migrate
 - rails db:seed
+
+TECHNICAL HINTS (RUBY):
+hoge: is a Symbol which is a static binded to a integera inside of Ruby
+
+Syntacs for hash with symbol...
+h1 = {:first => 1, :second => 2}
+h2 = { first: 1, second: 2}
+puts h2[:first] #1
+puts h2[:second] #2
+h1 == h2 #true
+
+Two lines below are equal...
+stylesheet_link_tag ("application", { media: "all", "data-turbolinks-track" => true} )
+stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
 
 -----
 BluePrint:
@@ -133,6 +147,7 @@ REFERENCE:
 
 RailsにTwitter Bootstrapの導入と簡易な使い方 http://ruby-rails.hatenadiary.com/entry/20140801/1406818800
 
+配列とハッシュとシンボルは紛らわしいので整理！！ http://qiita.com/iron-breaker/items/32710004f0bb2e2babb6
 
 
 
