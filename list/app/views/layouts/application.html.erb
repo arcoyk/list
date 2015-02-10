@@ -10,6 +10,14 @@
 
 
 <body>
+	<% if notice %>
+		<p class="alert alert-success"><%= notice %></p>
+	<% end %>
+	<% if alert %>
+	    <p class="alert alert-danger"><%= alert %></p>
+	<% end %>
+
+
 		<div class = "jumbotron">
 			<div class = "jumbotron_container">
 				<h1><%= link_to "LIST", "/strokes/index", :class => "lead" %></h1>
