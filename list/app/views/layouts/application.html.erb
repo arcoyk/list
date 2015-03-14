@@ -5,14 +5,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
 </head>
 
 
 <body>
-
+	
 	<% if user_signed_in? %>
-    <%= link_to "Sign out", destroy_user_session_path %>
+	    <%= link_to "Sign out", destroy_user_session_path %>
+	    <p> <%= session["user_name"]["nickname"] %> </p>
 	<% else %>
 	    <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
 	<% end %>
@@ -36,8 +36,8 @@
 			<tbody>
 				<%= form_for Stroke.new do |f| %>
 					<td><%= image_tag "default.png", :size => "70x50" %></td>
-					<td><%= f.text_field :content, :class => "form-control", :placeholder => "content" %>
-					<td><%= f.text_field :tags, :class => "form-control", :placeholder => "tag" %>
+					<td><%= f.text_field :content, :class => "form-control ui-autocomplete-input", :placeholder => "content", :id => "content", :autocomplete => "off"%>
+					<td><%= f.text_field :tags, :class => "form-control", :placeholder => "tag"%>
 					<td><%= f.submit :class => "btn btn-default"%>
 				<% end %>
 				<% @strokes.each do |stroke| %>

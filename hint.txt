@@ -78,7 +78,6 @@ TODO:
 Generate tag
 Secret tag
  List from image
- Log in
 Stock game
 List style
 ajax
@@ -92,6 +91,7 @@ Click stroke to url
 DONE:
 Auto icon, tags from content
  Content from url
+ Log in
 
 
 -----
