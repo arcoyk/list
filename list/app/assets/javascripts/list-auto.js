@@ -1,5 +1,7 @@
 jQuery(
 	function() {
-		$( "#content" ).autocomplete({ source: [ "c++", "java", "php", "coldfusion", "javascript", "asp", "ruby" ] });
+		var array =  $("#debug")[0].value.split("\n");
+		$("#content").autocomplete({source:array});
+		console.log(array);
 	}
 );

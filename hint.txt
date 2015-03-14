@@ -116,6 +116,7 @@ Great partner knows what the counterpart wants with a glance of her eyemoving, a
 1) How the A.I. aquire her context?
 2) Can ultimet autofill autofills "Titanic" before she input "T"?
 3) How the model of A.I. relates to information enthoropy and words in dictionary?
+4) What auto- should came in which layer? (e.g. autosearch when a user step by)
 
 -----
 POSSIBLE FUNCTIONS:

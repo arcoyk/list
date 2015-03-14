@@ -16,9 +16,13 @@
 	<% else %>
 	    <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
 	<% end %>
+	
 
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
+	<textarea id="debug" cols="100" rows="3">
+		<% @all_strokes.each do |stroke| %>
+<%= stroke.content %>
+		<% end %>
+	</textarea>
 
 		<div class = "jumbotron">
 			<div class = "jumbotron_container">
