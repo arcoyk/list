@@ -38,6 +38,7 @@ Rails Command:
 - rails g controller users index show -> create /app/views/users/show.html.erb, /app/views/users/index.html.erb and /app/controllers/users_controller.rb
 - rails g model user name:strig username:string location:string about:text -> (create model) generetes migration file
 
+Rake Command:
 - rake db:create
 - rake db:migrate -> create table based on migration file (e.g. /db/migrate/20150117094006_create_users.rb)
 - rake db:seed -> insert /db/seeds.rb data to database
@@ -47,6 +48,9 @@ Rails Command:
 - rails g model (model name)
 - rails db:migrate
 - rails db:seed
+
+Trouble Shoots:
+rake db:migrate -> is already used -> rake db:reset (db:drop db:create) -> db:migrate
 
 -----
 BluePrint:
@@ -74,7 +78,6 @@ TODO:
 Generate tag
 Secret tag
  List from image
- Log in
 Stock game
 List style
 ajax
@@ -88,6 +91,7 @@ Click stroke to url
 DONE:
 Auto icon, tags from content
  Content from url
+ Log in
 
 
 -----
@@ -107,6 +111,12 @@ Good ranking is nice serialization hence better capinity. Number cap sharpens a 
 2) Push and pull is actually a tag (e.g. @meaue_push)
 3) @meaue is a tag, and one stroke accept several same tags (e.g. @meaue, book, @meaue, @meaue, @meaue) like sign.
 
+6. Great autofill?
+Great partner knows what the counterpart wants with a glance of her eyemoving, and autofills complete wants before she specifies it with a sentence. This man, could be replaced by A.I., can autofill "Titanic" with her input of "T" because they were talking about the movie last night, or she has an interesting habitat of watching same movie every week. Anyway, it seems important to understand her context. So here are some questions:
+1) How the A.I. aquire her context?
+2) Can ultimet autofill autofills "Titanic" before she input "T"?
+3) How the model of A.I. relates to information enthoropy and words in dictionary?
+4) What auto- should came in which layer? (e.g. autosearch when a user step by)
 
 -----
 POSSIBLE FUNCTIONS:
@@ -133,6 +143,7 @@ REFERENCE:
 
 RailsにTwitter Bootstrapの導入と簡易な使い方 http://ruby-rails.hatenadiary.com/entry/20140801/1406818800
 
+devise gemを使ってtwitter認証の設定 http://qiita.com/soramugi/items/5b2ed46e8c8b6157e7cc
 
 
 

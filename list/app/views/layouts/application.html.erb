@@ -5,18 +5,35 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
 </head>
 
 
 <body>
+	
+	<% if user_signed_in? %>
+	    <%= link_to "Sign out", destroy_user_session_path %>
+	    <p> <%= session["user_name"]["nickname"] %> </p>
+	<% else %>
+	    <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
+	<% end %>
+	
+
+	<textarea id="debug" cols="100" rows="3">
+		<% @all_strokes.each do |stroke| %>
+<%= stroke.content %>
+		<% end %>
+	</textarea>
+
 		<div class = "jumbotron">
 			<div class = "jumbotron_container">
 				<h1><%= link_to "LIST", "/strokes/index", :class => "lead" %></h1>
 				<%= form_tag Stroke, :method => 'get' do %>
-					<%= text_field :query, params[:query], :class => "form-control", :placeholder => "ex. book, movie, @twitter_account" %>
+					<%= text_field :query, params[:query],
+								   :class => "form-control",
+								   :placeholder => "ex. book, movie, @twitter_account" %>
 					<br>
-					<%= submit_tag "Search", :name => nil, :class => "btn btn-default" %>
+					<%= submit_tag "Search", :name => nil,
+											 :class => "btn btn-default" %>
 				<% end %>
 			</div>
 		</div>
@@ -26,8 +43,14 @@
 			<tbody>
 				<%= form_for Stroke.new do |f| %>
 					<td><%= image_tag "default.png", :size => "70x50" %></td>
-					<td><%= f.text_field :content, :class => "form-control", :placeholder => "content" %>
-					<td><%= f.text_field :tags, :class => "form-control", :placeholder => "tag" %>
+					<td><%= f.text_field :content,
+										 :class => "form-control ui-autocomplete-input",
+										 :placeholder => "content",
+										 :id => "content",
+										 :autocomplete => "off"%>
+					<td><%= f.text_field :tags,
+										 :class => "form-control",
+										 :placeholder => "tag"%>
 					<td><%= f.submit :class => "btn btn-default"%>
 				<% end %>
 				<% @strokes.each do |stroke| %>
@@ -35,14 +58,19 @@
 						<td><%= image_tag stroke.icon, :size => "70x50" %></td>
 						<td><%= link_to stroke.content, stroke.url, :target => "_blank" %></td>
 						<td><%= stroke.tags %></td>
-						<td><%= button_to "PUSH", {:action => "push", :id => stroke.id}, :class => "btn btn-default" %></td>
-						<td><%= button_to "PULL", {:action => "pull", :id => stroke.id}, :class => "btn btn-default" %></td>
+						<td><%= button_to "PUSH", {:action => "push",
+												   :id => stroke.id},
+												   :class => "btn btn-default" %></td>
+						<td><%= button_to "PULL", {:action => "pull",
+												   :id => stroke.id},
+												   :class => "btn btn-default" %></td>
 					<% end %>
 				<% end %>
 			</tbody>
 		</table>
 		
 		<%= yield %>
+		
 	</div>
 </body>
 </html>

@@ -3,8 +3,11 @@ require "open-uri"
 require "nokogiri"
 
 class StrokesController < ApplicationController
+  $stroke_limit = 10
+
   def index
-  	@strokes = Stroke.all
+  	@all_strokes = Stroke.all
+    @strokes = @all_strokes[0, $stroke_limit]
     @strokes = @strokes.sort {|a, b| b.like <=> a.like}
     @strokes.each do |stroke|
       stroke.tags = self.short_tags stroke.tags
@@ -34,9 +37,10 @@ class StrokesController < ApplicationController
 
   def search
     # @strokes = Stroke.where(['name LIKE ?', "meaue"])
-    tmp = Stroke.all
-    simple_query = params[:query].first
-    @strokes = tmp.select { |stroke| stroke.tags.index(simple_query)}
+    @all_strokes = Stroke.all
+    @strokes = @all_strokes[0, $stroke_limit]
+    @strokes = @strokes.select { |stroke| stroke.tags.index(simple_query)}
+    @strokes = @strokes[0..$stroke_limit]
     @strokes = @strokes.sort {|a, b| b.like <=> a.like}
     params.delete :query
   end
