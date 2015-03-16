@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
 .jumbotron {
 	background: url("amelie.png");
 	background-position: center center;
@@ -24,6 +25,11 @@
 	text-align: center;
 	width: 500px;
 	margin: 0 auto;
+}
+
+.ui-front {
+	background-color: #fff;
+	width: 200px;
 }
 
 .form-control {

@@ -2774,7 +2774,7 @@ $.widget( "ui.autocomplete", {
 	options: {
 		appendTo: null,
 		autoFocus: false,
-		delay: 300,
+		delay: 0,
 		minLength: 1,
 		position: {
 			my: "left top",
@@ -2943,7 +2943,7 @@ $.widget( "ui.autocomplete", {
 		});
 
 		this._initSource();
-		this.menu = $( "<ul>" )
+		this.menu = $( "<table>", {class:"table"})
 			.addClass( "ui-autocomplete ui-front" )
 			.appendTo( this._appendTo() )
 			.menu({
@@ -3284,7 +3284,24 @@ $.widget( "ui.autocomplete", {
 	},
 
 	_renderItem: function( ul, item ) {
-		return $( "<li>" ).text( item.label ).appendTo( ul );
+		// manual fix
+		var stroke = $(" <tr> ", {class: "ui-autocomplete-stroke"});
+		var img_td = $(" <td> ", {class: "ui-autocomplete-img-td"});
+		var content_td = $(" <td> ", {class: "ui-autocomplete-content-td"});
+		var tag_td = $(" <td> ", {class: "ui-autocomplete-tag-td"});
+
+		var img = $(" <img> ", {class: "ui-autocomplete-img", src: item.label});
+		var content = $(" <p> ", {class: "ui-autocomplete-content", text: item.label, href: item.label});
+		var tag = $(" <p> ", {class: "ui-autocomplete-tag", text: item.label});
+
+		img_td.append(img);
+		content_td.append(content);
+		stroke.append(img_td);
+		stroke.append(content_td);
+		stroke.append(tag_td);
+
+		return stroke.appendTo( ul );
+		// return $( "<div>" ).text( item.label ).appendTo( ul );
 	},
 
 	_move: function( direction, event ) {
