@@ -3290,7 +3290,7 @@ $.widget( "ui.autocomplete", {
 		var content_td = $(" <td> ", {class: "ui-autocomplete-content-td"});
 		var tag_td = $(" <td> ", {class: "ui-autocomplete-tag-td"});
 
-		var img = $(" <img> ", {class: "ui-autocomplete-img", src: item.label});
+		var img = $(" <img> ", {class: "ui-autocomplete-img", src: "/images/default_mini.png"});
 		var content = $(" <p> ", {class: "ui-autocomplete-content", text: item.label, href: item.label});
 		var tag = $(" <p> ", {class: "ui-autocomplete-tag", text: item.label});
 
