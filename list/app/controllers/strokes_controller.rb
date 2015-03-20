@@ -12,7 +12,7 @@ class StrokesController < ApplicationController
     @strokes.each do |stroke|
       stroke.tags = self.short_tags stroke.tags
     end
-    @jumbotron_back_src = "../assets/images/jumbotron/amelie.png"
+    @jumbotron_img = "amelie.png"
   end
 
   def show
