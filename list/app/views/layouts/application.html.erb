@@ -5,6 +5,13 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <style type="text/css">
+  	.jumbotron {
+  		background: url(<%= asset_path @random_jumbotron_img %>);
+  		background-position: center center;
+		background-size: cover;
+  	}
+  </style>
 </head>
 
 
@@ -23,6 +30,7 @@
 <%= stroke.content %>
 		<% end %>
 	</textarea>
+			<%= @jumbotron_img %>
 
 		<div class = "jumbotron">
 			<div class = "jumbotron_container">

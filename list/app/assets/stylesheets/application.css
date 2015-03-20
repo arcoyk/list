@@ -14,12 +14,6 @@
  *= require_self
  */
 
-.jumbotron {
-	background: url('jumbotron/leon.png');
-	background-position: center center;
-	background-size: cover;
-}
-
 .jumbotron_container {
 	text-align: center;
 	width: 500px;

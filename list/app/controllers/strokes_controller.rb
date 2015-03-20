@@ -4,7 +4,6 @@ require "nokogiri"
 
 class StrokesController < ApplicationController
   $stroke_limit = 10
-
   def index
   	@all_strokes = Stroke.all
     @strokes = @all_strokes[0, $stroke_limit]
@@ -12,7 +11,7 @@ class StrokesController < ApplicationController
     @strokes.each do |stroke|
       stroke.tags = self.short_tags stroke.tags
     end
-    @jumbotron_img = "amelie.png"
+    @random_jumbotron_img = "jumbotron/" + rand(1..7).to_s + ".png"
   end
 
   def show
