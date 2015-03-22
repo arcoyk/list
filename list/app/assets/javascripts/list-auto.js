@@ -1,7 +1,7 @@
 jQuery(
 	function() {
 		var array =  $("#debug")[0].value.split("\n");
-		$("#content").autocomplete({source:array});
+		$("#title").autocomplete({source:array});
 	}
 );
 

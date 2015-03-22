@@ -16,62 +16,41 @@
 
 
 <body>
-	
-	<% if user_signed_in? %>
-	    <%= link_to "Sign out", destroy_user_session_path %>
-	    <p> <%= session["user_name"]["nickname"] %> </p>
-	<% else %>
-	    <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
-	<% end %>
-	
+
 
 	<textarea id="debug" cols="100" rows="3">
 		<% @all_strokes.each do |stroke| %>
 <%= stroke.content %>
 		<% end %>
 	</textarea>
-			<%= @jumbotron_img %>
-
-		<div class = "jumbotron">
-			<div class = "jumbotron_container">
-				<h1><%= link_to "LIST", "/strokes/index", :class => "lead" %></h1>
-				<%= form_tag Stroke, :method => 'get' do %>
-					<%= text_field :query, params[:query],
-								   :class => "form-control",
-								   :placeholder => "ex. book, movie, @twitter_account" %>
-					<br>
-					<%= submit_tag "Search", :name => nil,
-											 :class => "btn btn-default" %>
-				<% end %>
-			</div>
-		</div>
 
 	<div class = "container">
 		<table class = "table">
 			<tbody>
 				<%= form_for Stroke.new do |f| %>
-					<td><%= image_tag "default.png", :size => "70x50" %></td>
-					<td><%= f.text_field :content,
+					<td><%= image_tag "default.png", :size => "128x80" %></td>
+					<td>
+						<%= f.text_field :content,
 										 :class => "form-control ui-autocomplete-input",
-										 :placeholder => "content",
+										 :placeholder => "Titanic (1998) XXXXX",
+										 :id => "title",
+										 :autocomplete => "off"%>
+						<%= f.text_field :content,
+										 :class => "form-control",
+										 :placeholder => "I can cry even at the first 5 minutes... Love this movie.",
 										 :id => "content",
 										 :autocomplete => "off"%>
-					<td><%= f.text_field :tags,
+						<%= f.text_field :tags,
 										 :class => "form-control",
-										 :placeholder => "tag"%>
-					<td><%= f.submit :class => "btn btn-default"%>
+										 :id => "tags" %>
+					</td>
+					<td><%= f.submit :class => "btn btn-default"%></td>
 				<% end %>
 				<% @strokes.each do |stroke| %>
 					<%= content_tag_for(:tr, stroke) do %>
-						<td><%= image_tag stroke.icon, :size => "70x50" %></td>
+						<td><%= image_tag stroke.icon, :size => "128x80" %></td>
 						<td><%= link_to stroke.content, stroke.url, :target => "_blank" %></td>
 						<td><%= stroke.tags %></td>
-						<td><%= button_to "PUSH", {:action => "push",
-												   :id => stroke.id},
-												   :class => "btn btn-default" %></td>
-						<td><%= button_to "PULL", {:action => "pull",
-												   :id => stroke.id},
-												   :class => "btn btn-default" %></td>
 					<% end %>
 				<% end %>
 			</tbody>
