@@ -31,18 +31,10 @@
 					<td><%= image_tag "default.png", :size => "128x80" %></td>
 					<td>
 						<%= f.text_field :content,
-										 :class => "form-control ui-autocomplete-input",
-										 :placeholder => "Titanic (1998) XXXXX",
-										 :id => "title",
-										 :autocomplete => "off"%>
-						<%= f.text_field :content,
 										 :class => "form-control",
 										 :placeholder => "I can cry even at the first 5 minutes... Love this movie.",
 										 :id => "content",
 										 :autocomplete => "off"%>
-						<%= f.text_field :tags,
-										 :class => "form-control",
-										 :id => "tags" %>
 					</td>
 					<td><%= f.submit :class => "btn btn-default"%></td>
 				<% end %>

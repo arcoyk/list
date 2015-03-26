@@ -3,7 +3,7 @@ require "open-uri"
 require "nokogiri"
 
 class StrokesController < ApplicationController
-  $stroke_limit = 100
+  $stroke_limit = 10000
   def index
   	@all_strokes = Stroke.all
     @strokes = @all_strokes[0, $stroke_limit]
@@ -16,7 +16,9 @@ class StrokesController < ApplicationController
     # movie debugging
     @movies = Array.new()
     @strokes.each do |stroke|
+      if stroke.tags.include? '@meaue'
         @movies.push stroke
+      end
     end
     @strokes = @movies
   end
@@ -31,9 +33,8 @@ class StrokesController < ApplicationController
     stroke = Stroke.new
     comment = params[:stroke][:content]
     title = params[:stroke][:content]
-    stroke.content = "<b id='titile'> #{title} </b><p id='comment'> #{comment} </p>"
-    stroke.content = "BOO"
-    stroke.tags = params[:stroke][:tags]
+    stroke.content = "#{title}, #{comment}"
+    stroke.tags = params[:stroke][:tags] + ',@meaue'
     stroke.like = 0
     stroke.icon = "default.png"
     stroke
@@ -104,6 +105,9 @@ class StrokesController < ApplicationController
   end
 
   def short_tags tags
+    if tags == nil
+      return "No tag"
+    end
     if tags.length > 10
       return tags.split("")[0, 10].join("") + "..."
     else
