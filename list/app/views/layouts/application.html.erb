@@ -24,29 +24,40 @@
 	    <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
 	<% end %>
 	
-
 	<textarea id="debug" cols="100" rows="3">
 		<% @all_strokes.each do |stroke| %>
-<%= stroke.content %>
+			<%= stroke.content %>
 		<% end %>
 	</textarea>
-			<%= @jumbotron_img %>
 
-		<div class = "jumbotron">
-			<div class = "jumbotron_container">
-				<h1><%= link_to "LIST", "/strokes/index", :class => "lead" %></h1>
-				<%= form_tag Stroke, :method => 'get' do %>
-					<%= text_field :query, params[:query],
-								   :class => "form-control",
-								   :placeholder => "ex. book, movie, @twitter_account" %>
-					<br>
-					<%= submit_tag "Search", :name => nil,
-											 :class => "btn btn-default" %>
-				<% end %>
-			</div>
+	<div class = "jumbotron">
+		<div class = "jumbotron_container">
+			<h1><%= link_to "LIST", "/strokes/index", :class => "lead" %></h1>
+			<%= form_tag Stroke, :method => 'get' do %>
+				<%= text_field :query, params[:query],
+							   :class => "form-control",
+							   :placeholder => "ex. book, movie, @twitter_account" %>
+				<br>
+				<%= submit_tag "Search", :name => nil,
+										 :class => "btn btn-default" %>
+			<% end %>
 		</div>
+	</div>
 
 	<div class = "container">
+		<div style = "padding:90px 40px;">
+			<div style = "width:300px; height:200px">
+				<img src="http://localhost:3000/images/default.png"></img>
+			</div>
+			<div sytle = "width:500px; height:100px;">
+				<div style = "width:250px; height:100px">
+					<h3>Titanic 1999</h3>
+				</div>
+				<div style = "width:250px; height:100px">
+					<h5>This is the movie I love ever in my life</h5>
+				</div>
+			</div>
+		</div>
 		<table class = "table">
 			<tbody>
 				<%= form_for Stroke.new do |f| %>
