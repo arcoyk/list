@@ -5,20 +5,10 @@ require "nokogiri"
 class StrokesController < ApplicationController
   $stroke_limit = 100
   def index
-  	@all_strokes = Stroke.all
+  	@all_strokes = Stroke.where("tags = '@meaue'")
     @strokes = @all_strokes[0, $stroke_limit]
     @strokes = @strokes.sort {|a, b| b.like <=> a.like}
-    @strokes.each do |stroke|
-      stroke.tags = self.short_tags stroke.tags
-    end
     @random_jumbotron_img = "jumbotron/" + rand(1..7).to_s + ".png"
-
-    # movie debugging
-    @movies = Array.new()
-    @strokes.each do |stroke|
-        @movies.push stroke
-    end
-    @strokes = @movies
   end
 
   def show
@@ -27,22 +17,15 @@ class StrokesController < ApplicationController
   def new
   end
 
-  def movie_stroke
+  def create
     stroke = Stroke.new
     comment = params[:stroke][:content]
-    title = params[:stroke][:content]
-    stroke.content = "<b id='titile'> #{title} </b><p id='comment'> #{comment} </p>"
-    stroke.content = "BOO"
+    title = params[:stroke][:title]
+    stroke.content = comment
     stroke.tags = params[:stroke][:tags]
     stroke.like = 0
     stroke.icon = "default.png"
-    stroke
-  end
-
-  def create
-  	stroke = movie_stroke
     stroke.save
-  	redirect_to '/strokes/index'
   end
 
   def search
