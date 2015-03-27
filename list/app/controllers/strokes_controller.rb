@@ -1,6 +1,7 @@
 require "uri"
 require "open-uri"
 require "nokogiri"
+require "json"
 
 class StrokesController < ApplicationController
   $stroke_limit = 100
@@ -18,14 +19,19 @@ class StrokesController < ApplicationController
   end
 
   def create
+    # create special movie stroke
     stroke = Stroke.new
     comment = params[:stroke][:content]
     title = params[:stroke][:title]
-    stroke.content = comment
+    hash = Hash.new
+    hash["comment"] = comment
+    hash["title"] = title
+    stroke.content = JSON.generate(hash)
     stroke.tags = params[:stroke][:tags]
     stroke.like = 0
     stroke.icon = "default.png"
     stroke.save
+    redirect_to '/strokes/index'
   end
 
   def search

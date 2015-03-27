@@ -30,7 +30,7 @@
 				<%= form_for Stroke.new do |f| %>
 					<td><%= image_tag "default.png", :size => "128x80" %></td>
 					<td>
-						<%= f.text_field :content,
+						<%= f.text_field :title,
 										 :class => "form-control ui-autocomplete-input",
 										 :placeholder => "Titanic (1998) XXXXX",
 										 :id => "title",
@@ -52,7 +52,9 @@
 				<% @strokes.each do |stroke| %>
 					<%= content_tag_for(:tr, stroke) do %>
 						<td><%= image_tag stroke.icon, :size => "128x80" %></td>
-						<td><%= link_to stroke.content, stroke.url, :target => "_blank" %></td>
+						<%= hash = JSON.parse(stroke.content) %>
+						<td><b> <%= hash["title"] %> </b></td>
+						<td><p> <%= hash["content"] %> </p></td>
 						<td><%= stroke.tags %></td>
 					<% end %>
 				<% end %>
