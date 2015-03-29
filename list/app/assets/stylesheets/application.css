@@ -14,10 +14,6 @@
  *= require_self
  */
 
-div {
-	border: 1px solid #eeeeee;
-}
-
 .jumbotron_container {
 	text-align: center;
 	width: 500px;

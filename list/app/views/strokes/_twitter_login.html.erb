@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+    <%= link_to "Sign out", destroy_user_session_path %>
+    <p> <%= session["user_name"]["nickname"] %> </p>
+<% else %>
+    <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
+<% end %>

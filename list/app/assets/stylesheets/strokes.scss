@@ -1,3 +1,35 @@
 // Place all the styles related to the strokes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+$stroke_width: 500;
+$stroke_height: 200;
+.film_stroke {
+	float: left;
+	width: $stroke_width;
+	height: $stroke_height;
+}
+.left_box {
+	float: left;
+	width: $stroke_width / 2;
+	height: $stroke_height;
+}
+.film_sumb {
+	float: left;
+	width: $stroke_width / 2;
+	height: auto;
+}
+.right_box {
+	float: left;
+	width: $stroke_width / 2;
+	height: $stroke_height;
+}
+.title {
+	width: $stroke_width / 2;
+	height: $stroke_height / 4;
+}
+.comment {
+	width: $stroke_width / 2;
+	height: $stroke_height / 4 * 3;
+}

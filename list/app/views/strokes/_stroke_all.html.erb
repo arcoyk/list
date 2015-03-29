@@ -1,0 +1,7 @@
+<% @strokes.each do |stroke| %>
+	<%= content_tag_for(:tr, stroke) do %>
+		<td><%= image_tag stroke.icon, :size => "70x50" %></td>
+		<td><%= link_to stroke.content, stroke.url, :target => "_blank" %></td>
+		<td><%= stroke.tags %></td>
+	<% end %>
+<% end %>

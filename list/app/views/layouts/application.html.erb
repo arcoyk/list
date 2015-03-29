@@ -13,84 +13,22 @@
   	}
   </style>
 </head>
-
-
 <body>
-	
-	<% if user_signed_in? %>
-	    <%= link_to "Sign out", destroy_user_session_path %>
-	    <p> <%= session["user_name"]["nickname"] %> </p>
-	<% else %>
-	    <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
-	<% end %>
-	
+	<%= render 'strokes/twitter_login.html.erb' %>
 	<textarea id="debug" cols="100" rows="3">
 		<% @all_strokes.each do |stroke| %>
 			<%= stroke.content %>
 		<% end %>
 	</textarea>
-
-	<div class = "jumbotron">
-		<div class = "jumbotron_container">
-			<h1><%= link_to "LIST", "/strokes/index", :class => "lead" %></h1>
-			<%= form_tag Stroke, :method => 'get' do %>
-				<%= text_field :query, params[:query],
-							   :class => "form-control",
-							   :placeholder => "ex. book, movie, @twitter_account" %>
-				<br>
-				<%= submit_tag "Search", :name => nil,
-										 :class => "btn btn-default" %>
-			<% end %>
-		</div>
-	</div>
-
+	<%= render 'strokes/jumbotron.html.erb' %>
 	<div class = "container">
-		<div class = "_container">
-			<div class = "_film_img">
-				<img src="default.png"></img>
-			</div>
-			<div class = "_film_text">
-				<div class = "_film_title">
-					<h3>Titanic 1999</h3>
-				</div>
-				<div class = "_film_cmment">
-					<h5>This is the movie I love ever in my life</h5>
-				</div>
-			</div>
-		<div>
-		
+		<%= render 'strokes/film_stroke.html.erb' %>
 		<table class = "table">
 			<tbody>
-				<%= form_for Stroke.new do |f| %>
-					<td><%= image_tag "default.png", :size => "70x50" %></td>
-					<td><%= f.text_field :content,
-										 :class => "form-control ui-autocomplete-input",
-										 :placeholder => "content",
-										 :id => "content",
-										 :autocomplete => "off"%>
-					<td><%= f.text_field :tags,
-										 :class => "form-control",
-										 :placeholder => "tag"%>
-					<td><%= f.submit :class => "btn btn-default"%>
-				<% end %>
-				<% @strokes.each do |stroke| %>
-					<%= content_tag_for(:tr, stroke) do %>
-						<td><%= image_tag stroke.icon, :size => "70x50" %></td>
-						<td><%= link_to stroke.content, stroke.url, :target => "_blank" %></td>
-						<td><%= stroke.tags %></td>
-						<td><%= button_to "PUSH", {:action => "push",
-												   :id => stroke.id},
-												   :class => "btn btn-default" %></td>
-						<td><%= button_to "PULL", {:action => "pull",
-												   :id => stroke.id},
-												   :class => "btn btn-default" %></td>
-					<% end %>
-				<% end %>
+				<%= render 'strokes/stroke_form.html.erb' %>
+				<%= render 'strokes/stroke_all.html.erb' %>
 			</tbody>
 		</table>
-		
-		<%= yield %>
-		
 	</div>
 </body>
 </html>
